@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/img/logo-head.svg"
+      type="image/x-icon"
+    />
+    <title>Biruni</title>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="./src/assets/font/Gilroy/stylesheet.css" />
+    <link rel="stylesheet" href="./src/assets/scss/reset.scss" />
+    <link rel="stylesheet" href="./src/assets/scss/common.scss" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const body = document.querySelector("body");
+
+      // добавляем обработчик события для прокрутки колесиком мыши
+      body.addEventListener("wheel", function (e) {
+        e.preventDefault(); // отменяем стандартное действие при прокрутке
+
+        const delta = e.wheelDelta; // получаем значение прокрутки
+
+        // устанавливаем позицию прокрутки с плавным эффектом
+        body.scrollTo({
+          top: body.scrollTop + delta,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
