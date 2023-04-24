@@ -6,8 +6,6 @@
     </div>
     <Search></Search>
   </div>
-
-  <CourseInfo></CourseInfo>
 </template>
 <script setup lang="ts">
 import Course from "../components/course.vue";

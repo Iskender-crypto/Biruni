@@ -7,7 +7,10 @@
       id=""
       placeholder="Find your passion"
     />
-    <button class="search__go">Go</button>
+    <button class="search__btn">
+      <div class="search__btn--rectanlge"></div>
+      <div class="search__btn--text">Go</div>
+    </button>
   </div>
 </template>
 <style scoped lang="scss">
@@ -42,38 +45,50 @@
   &__input:hover::after {
     background-color: rgb(246, 246, 246);
   }
-  &__go {
+  &__btn {
     background: #8682fe;
     border: none;
-    padding: 38px 35px;
+    cursor: pointer;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+  }
+  &__btn--text {
     font-family: "Gilroy";
     font-style: normal;
     font-weight: 400;
     font-size: 34px;
     line-height: 22px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
     color: #fdfcfb;
-    position: relative;
-  }
-  &__go::after {
+    transition: 0s !important;
     position: absolute;
-    display: block;
-    content: "";
-    height: 0px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+  }
+  &__btn:hover &__btn--text {
+    transition: 0s !important;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  &__btn--rectanlge {
     width: 100%;
-    background-color: #b8984e;
-    top: 0px;
-    left: 0;
-    transition: 0.6s;
-  }
-  &__go:hover {
-    background-color: #524eb8;
-  }
-  &__go:hover::after {
     height: 100%;
+    background-color: #feba88;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    transition: 0.4s;
   }
+  &__btn:hover &__btn--rectanlge {
+    z-index: 1;
+    top: 0px;
+  }
+
   @media screen and (max-width: 1100px) {
     .search__input {
       padding: 20px 15px;
@@ -109,7 +124,7 @@
     color: #1e1e2f;
   }
 
-  .search__go {
+  .search__btn {
     padding: 10px;
     font-family: "Gilroy";
     font-style: normal;
