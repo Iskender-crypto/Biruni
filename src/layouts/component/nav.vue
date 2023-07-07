@@ -1,56 +1,71 @@
 <template>
   <div class="container">
-    <nav ref="nav">
-      <router-link to="/" class="logo">
-        <img src="../../assets/img/logo.svg" alt="" />
-      </router-link>
-      <ul class="menu">
-        <li>
-          <router-link class="menu__link" :to="'#categories'"
-            >Категории</router-link
+    <div class="container">
+      <nav ref="nav">
+        <router-link to="/" class="logo">
+          <img src="../../assets/img/logo.svg" alt="" />
+        </router-link>
+        <ul class="menu">
+          <li>
+            <router-link class="menu__link" :to="'#categories'"
+              >Категории</router-link
+            >
+          </li>
+          <li>
+            <router-link class="menu__link" to="#about">О нас</router-link>
+          </li>
+          <li>
+            <router-link class="menu__link" to="#contact">Контакты</router-link>
+          </li>
+        </ul>
+        <div class="servies">
+          <router-link class="menu__link" to="/login/register"
+            >Login</router-link
           >
-        </li>
-        <li>
-          <router-link class="menu__link" to="#about">О нас</router-link>
-        </li>
-        <li>
-          <router-link class="menu__link" to="#contact">Контакты</router-link>
-        </li>
-      </ul>
-      <div class="servies">
-        <router-link class="menu__link" to="/login/register">Login</router-link>
-        <button class="free">Free Trial</button>
-      </div>
+          <button class="free__btn">
+            <div class="free__btn--rectanlge"></div>
+            <div class="free__btn--text">Free Trial</div>
+          </button>
+        </div>
 
-      <router-link
-        to="#"
-        @click="callMenu"
-        class="burger"
-        :class="{ burger: !isTrue, burgerClick: isTrue }"
-      >
-        <div class="burger__item"></div>
-        <div class="burger__item"></div>
-      </router-link>
-    </nav>
+        <router-link
+          to="#"
+          @click="callMenu"
+          class="burger"
+          :class="{ burger: !isTrue, burgerClick: isTrue }"
+        >
+          <div class="burger__item"></div>
+          <div class="burger__item"></div>
+        </router-link>
+      </nav>
+    </div>
+
     <div class="burger__menu" :class="{ 'burger__menu-height': isTrue }">
-      <ul class="menu">
-        <li>
-          <router-link class="menu__link" to="#categories"
-            >Категории</router-link
+      <div class="container">
+        <ul class="menu">
+          <li>
+            <router-link class="menu__link" to="#categories"
+              >Категории</router-link
+            >
+          </li>
+          <hr />
+          <li>
+            <router-link class="menu__link" to="#about">О нас</router-link>
+          </li>
+          <hr />
+          <li>
+            <router-link class="menu__link" to="#contact">Контакты</router-link>
+          </li>
+        </ul>
+        <div class="servies">
+          <router-link class="menu__link" to="/login/register"
+            >Login</router-link
           >
-        </li>
-        <hr />
-        <li>
-          <router-link class="menu__link" to="#about">О нас</router-link>
-        </li>
-        <hr />
-        <li>
-          <router-link class="menu__link" to="#contact">Контакты</router-link>
-        </li>
-      </ul>
-      <div class="servies">
-        <router-link class="menu__link" to="/login/register">Login</router-link>
-        <button class="free">Free Trial</button>
+          <button class="free__btn">
+            <div class="free__btn--rectanlge"></div>
+            <div class="free__btn--text">Free Trial</div>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -106,7 +121,7 @@ nav {
   }
   .menu__link:after {
     height: 0px;
-    transition: 0.6s;
+    transition: 0.3s;
     position: absolute;
     z-index: 1;
     content: "";
@@ -122,27 +137,50 @@ nav {
     display: flex;
     align-items: center;
   }
-  .free {
+  .free__btn {
     width: 160px;
     height: 42px;
     background-color: #1e1e2f;
     outline: none;
     border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .free__btn--rectanlge {
+    position: absolute;
+    width: 101%;
+    height: 101%;
+    top: 100%;
+    border-radius: 100px;
+    left: 0px;
+    background-color: #feba88;
+    z-index: 2;
+    transition: 0.2s;
+  }
+  .free__btn:hover .free__btn--rectanlge {
+    position: absolute;
+    top: 0px;
+    border-radius: 0;
+    z-index: 2;
+  }
+  .free__btn:hover .free__btn--text {
+    position: absolute;
+    z-index: 3;
+  }
+  .free__btn--text {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #ffffff;
-    border: 0.1px solid #ffffff;
     font-family: "Gilroy";
-    border-radius: 100px;
-    cursor: pointer;
-  }
-  .free:hover {
-    background-color: #5853e4;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .burger {
     display: none;
@@ -237,7 +275,7 @@ nav {
     z-index: 1;
     content: "";
     display: block;
-    background-color: rgba(128, 0, 128, 0.436);
+    background-color: #8682fe83;
     width: 100%;
     bottom: 0;
   }
@@ -248,27 +286,52 @@ nav {
     display: flex;
     align-items: center;
   }
-  .free {
+  .free__btn {
     width: 160px;
     height: 42px;
     background-color: #1e1e2f;
     outline: none;
     border: none;
+    border: 0.1px solid #ffffff;
+    cursor: pointer;
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .free__btn--rectanlge {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    border-radius: 100px;
+    left: 0px;
+    background-color: #8682fe;
+    z-index: 2;
+    transition: 0.2s;
+  }
+  .free__btn:hover .free__btn--rectanlge {
+    position: absolute;
+    top: 0px;
+    border-radius: 0;
+    z-index: 2;
+  }
+  .free__btn:hover .free__btn--text {
+    position: absolute;
+    z-index: 3;
+    font-weight: 600;
+  }
+  .free__btn--text {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #ffffff;
-    border: 0.1px solid #ffffff;
     font-family: "Gilroy";
-    border-radius: 100px;
-    cursor: pointer;
-  }
-  .free:hover {
-    background-color: #5853e4;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 

@@ -10,29 +10,24 @@
       type="image/x-icon"
     />
     <title>Biruni</title>
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
     <link rel="stylesheet" href="./src/assets/font/Gilroy/stylesheet.css" />
     <link rel="stylesheet" href="./src/assets/scss/reset.scss" />
     <link rel="stylesheet" href="./src/assets/scss/common.scss" />
+    <style></style>
   </head>
   <body>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
     <div id="app"></div>
+
+    <script type="module" src="/src/main.ts"></script>
     <script>
-      const body = document.querySelector("body");
-
-      // добавляем обработчик события для прокрутки колесиком мыши
-      body.addEventListener("wheel", function (e) {
-        e.preventDefault(); // отменяем стандартное действие при прокрутке
-
-        const delta = e.wheelDelta; // получаем значение прокрутки
-
-        // устанавливаем позицию прокрутки с плавным эффектом
-        body.scrollTo({
-          top: body.scrollTop + delta,
-          behavior: "smooth",
-        });
+      let cursor = document.querySelector(".cursor");
+      let cursor2 = document.querySelector(".cursor2");
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.cssText = cursor2.style.cssText =
+          "left: " + e.clientX + "px; top: " + e.clientY + "px;";
       });
     </script>
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
