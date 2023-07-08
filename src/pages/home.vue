@@ -12,11 +12,12 @@
     <div class="container">
       <div class="about-us__nav">
         <h2 class="about-us__nav-title">
-          Get the skills you need for a job that is in demand.
+          О НАС
         </h2>
         <p class="about-us__nav-subtitle">
-          The modern labor market dictates its own terms. Today, to be a
-          competitive specialist requires more than professional skills.
+          Ученики не просто слушают теорию, а сразу же начинают
+          работать над реальными задачами, что позволяет им быстрее применять знания на
+          практике и усваивать материал более эффективно.
         </p>
       </div>
 
@@ -25,24 +26,27 @@
           <div class="about-us__info-text-row">
             <div class=""><div class="about-us__info-text--logo"></div></div>
             <div class="about-us__info-text--caption">
-              The modern labor market dictates its own terms. Today, to be a
-              competitive
+              В нашей айтишколе Бируни
+              мы уделяем много внимания практическим навыкам
+              и работе над проектами.
             </div>
           </div>
           <div class="about-us__info-text-line"></div>
           <div class="about-us__info-text-row">
             <div class=""><div class="about-us__info-text--logo"></div></div>
             <div class="about-us__info-text--caption">
-              The modern labor market dictates its own terms. Today, to be a
-              competitive
+              Наша школа сотрудничает с
+              крупными компаниями, что дает возможность нашим студентам получать актуальную
+              информацию от профессионалов в своей области и участвовать в интересных
+              проектах.
             </div>
           </div>
           <div class="about-us__info-text-line"></div>
           <div class="about-us__info-text-row">
             <div class=""><div class="about-us__info-text--logo"></div></div>
             <div class="about-us__info-text--caption">
-              The modern labor market dictates its own terms. Today, to be a
-              competitive
+              Все наши менторы – опытные и успешные специалисты в своей области,
+              которые всегда готовы помочь своим студентам.
             </div>
           </div>
         </div>
@@ -51,9 +55,17 @@
             <source src="../assets/video/IMG_1706.MP4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div class="about-us__info-rec"></div>
+          <div class="about-us__info-rec text-white p-4 flex align-items-center">Наша команда также постоянно
+            работает над улучшением программы обучения и внедрением новых технологий.</div>
         </div>
       </div>
+      <p class="text-sm">
+        Если вы хотите получить высококвалифицированное образование в IT-сфере,
+        то наша айтишкола Бируни – это отличный выбор для вас! Вы сможете получить
+        полезные знания, научиться работать с самыми современными инструментами и
+        получить возможность для развития своей карьеры. Не упустите свой шанс на успех
+        в IT-индустрии и присоединяйтесь к нам прямо сейчас!
+      </p>
     </div>
   </div>
   <div class="feedback">
@@ -181,7 +193,7 @@ const breakpoints = {
 };
 const modules = [Navigation];
 </script>
-<style scoped lang="scss">
+<style  lang="scss">
 .banner {
   display: flex;
   align-items: flex-start;

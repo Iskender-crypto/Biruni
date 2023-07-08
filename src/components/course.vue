@@ -5,6 +5,7 @@
     :modules="modules"
     :breakpoints="breakpoints"
     :navigation="true"
+    loop
     class="mySwiper courses"
   >
     <swiper-slide
@@ -31,7 +32,7 @@
           </div>
         </div>
         <div
-          class="course__rectangle"
+          class="course__rectangle hidden sm:flex"
           :class="{ courseRectangle: course.activeCourse }"
         ></div></div
     ></swiper-slide>
@@ -47,27 +48,26 @@ import "swiper/css/navigation";
 const courses = ref([
   {
     id: 1,
-    img: "/img/abay.png",
+    img: "/img/абай.png",
     courseTitle: "UX/UI дизайн",
-    courseDurationNumber: "12",
-    courseDurationText: "неделя",
+    courseDurationNumber: "3",
+    courseDurationText: "месяц",
     activeCourse: true,
   },
-
   {
     id: 2,
-    img: "/img/abay.png",
-    courseTitle: "UX/UI Дизайн",
-    courseDurationNumber: "12",
-    courseDurationText: "неделя",
+    img: "/img/director.png",
+    courseTitle: "PROJECT-MANAGER",
+    courseDurationNumber: "6",
+    courseDurationText: "месяц",
     activeCourse: false,
   },
   {
     id: 3,
-    img: "/img/abay.png",
-    courseTitle: "UX/UI Дизайн",
-    courseDurationNumber: "12",
-    courseDurationText: "неделя",
+    img: "/img/frontend.png",
+    courseTitle: "FrontEnd",
+    courseDurationNumber: "6",
+    courseDurationText: "месяц",
     activeCourse: false,
   },
 ]);
@@ -140,10 +140,16 @@ const courseNext = () => {};
     z-index: 2;
     width: auto;
     width: 30%;
+    @media screen and (max-width: 576px){
+    transform: rotate(0deg);
+    width: 30%;
+  }
   }
   .courseTitle {
     transform: rotate(0deg);
     width: 30%;
+
+
   }
 
   .course__date {
@@ -154,6 +160,9 @@ const courseNext = () => {};
     bottom: 15%;
     right: 20px;
     opacity: 0;
+    @media screen and (max-width: 576px){
+      opacity: 1;
+    }
   }
 
   .course__date-number {

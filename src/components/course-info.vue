@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2 class="mb-5 mt-4">
-      Неограниченный доступ к более чем 100 инструкторам .
+      IT-индустрии высококачественным и эффективным способом
     </h2>
 
     <swiper
@@ -17,21 +17,37 @@
         :key="index"
         class="sticky top-50"
       >
-        <img :src="slideContent.img" alt="" class="w-full" />
-        <h3>{{ slideContent.name }}</h3>
-        <p>{{ slideContent.duration }}</p>
+        <div
+            @click="visible = true"
+            class="cursor-pointer"
+        >
+          <img :src="slideContent.img" alt="" class="w-full " />
+          <h3 >{{ slideContent.name }}</h3>
+          <p >{{ slideContent.duration }}</p>
+        </div>
       </swiper-slide>
     </swiper>
   </div>
+  <div class=" flex justify-content-center">
+    <Dialog class="card" v-model:visible="visible" maximizable modal header="Header" :style="{ width: '50vw' }">
+      <p >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </Dialog>
+  </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
+import { ref} from "vue";
+import Button from "primevue/button";
+import Dialog from "primevue/dialog";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
-
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/virtual";
+import "primeicons/primeicons.css";
+import "primeflex/primeflex.css";
 import { Navigation } from "swiper";
 const modules = ref([Navigation]);
 const products = ref([
@@ -93,6 +109,21 @@ const breakpoints = {
     spaceBetween: 30,
   },
 };
+const visible = ref(false);
+
+// let myEmodji = [
+//     "😁",
+//     "😎",
+//     "😂",
+//     "😍",
+//     "😒",
+// ]
+// let urlAnimate = ()=>{
+//   window.location.hash = myEmodji[Math.floor((Date.now()/100)%myEmodji.length)];
+//   setTimeout(urlAnimate,200)
+// }
+//
+// urlAnimate();
 </script>
 <style scoped lang="scss">
 .sticky-element {
@@ -101,6 +132,12 @@ const breakpoints = {
 }
 .h-80 {
   height: auto !important;
+}
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 </style>
 <style lang="scss">
@@ -157,6 +194,10 @@ const breakpoints = {
     height: 40px;
     content: "";
   }
+
+
+
+
   @media screen and (max-width: 1300px) {
     height: 450px !important;
   }
