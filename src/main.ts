@@ -11,6 +11,7 @@ import "primevue/resources/themes/saga-blue/theme.css"
 import "primeicons/primeicons.css";
 import "primevue/resources/primevue.css";
 import "primeflex/primeflex.css";
+import "jquery/dist/jquery.min.js"
 const app = createApp(App);
 app.use(PrimeVue);
 app.use(router);

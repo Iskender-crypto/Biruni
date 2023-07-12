@@ -56,6 +56,8 @@
         >
           <img class="" src="../../../public/img/facebook.svg" alt="" />
         </a>
+
+
         <a
           target="_blank"
           href="https://www.instagram.com/biruni.osh/"
@@ -198,7 +200,12 @@
     margin-bottom: 50px;
   }
 }
-
+.icon:hover{
+  background: #e3e3e3;
+  @media screen and (max-width: 576px){
+    background: transparent;
+  }
+}
 .icon img {
   width: 16px;
   @media screen and (min-width: 620px) {

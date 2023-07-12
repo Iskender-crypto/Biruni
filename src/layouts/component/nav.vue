@@ -7,20 +7,20 @@
         </router-link>
         <ul class="menu">
           <li>
-            <router-link class="menu__link" :to="'#categories'"
-              >Категории</router-link
+            <a class="menu__link"  href="#categories"
+              >Категории</a
             >
           </li>
           <li>
-            <router-link class="menu__link" to="#about">О нас</router-link>
+            <a class="menu__link" href="#about">О нас</a>
           </li>
           <li>
-            <router-link class="menu__link" to="#contact">Контакты</router-link>
+            <a class="menu__link" href="#contact">Контакты</a>
           </li>
         </ul>
         <div class="servies">
-          <router-link class="menu__link" to="/login/register"
-            >Login</router-link
+          <a class="menu__link" to="/login/register"
+            >Login</a
           >
           <button class="free__btn">
             <div class="free__btn--rectanlge"></div>
@@ -44,17 +44,16 @@
       <div class="container">
         <ul class="menu">
           <li>
-            <router-link class="menu__link" to="#categories"
-              >Категории</router-link
-            >
+            <a href="#categories" class="menu__link"
+              >Категории</a>
           </li>
           <hr />
           <li>
-            <router-link class="menu__link" to="#about">О нас</router-link>
+            <a class="menu__link" href="#about">О нас</a>
           </li>
           <hr />
           <li>
-            <router-link class="menu__link" to="#contact">Контакты</router-link>
+            <a class="menu__link" href="#contact">Контакты</a>
           </li>
         </ul>
         <div class="servies">
@@ -88,6 +87,8 @@ window.addEventListener("scroll", (e) => {
     nav.value.classList.remove("navSticky");
   }
 });
+
+
 </script>
 <style scoped lang="scss">
 .container {

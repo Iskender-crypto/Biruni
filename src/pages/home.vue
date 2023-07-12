@@ -6,8 +6,9 @@
     </div>
     <Search></Search>
   </div>
-  <CourseInfo></CourseInfo>
-
+  <div id="categories"></div>
+  <CourseInfo ></CourseInfo>
+  <div id="about"></div>
   <div class="about-us">
     <div class="container">
       <div class="about-us__nav">
@@ -98,6 +99,7 @@
       </swiper-slide>
     </swiper>
   </div>
+  <div id="contact"></div>
 </template>
 <script setup lang="ts">
 import Course from "../components/course.vue";
@@ -192,6 +194,7 @@ const breakpoints = {
   },
 };
 const modules = [Navigation];
+
 </script>
 <style  lang="scss">
 .banner {
